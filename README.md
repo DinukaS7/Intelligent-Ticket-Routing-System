@@ -31,10 +31,10 @@ The system follows a modular ETL and Inference pipeline:
 
 ```mermaid
 graph LR
-    A[Raw Data (CSV)] -->|Python Script| B[(PostgreSQL DB)]
-    B -->|Fetch Text| C[Topic Modeling (LDA)]
+    A["Raw Data (CSV)"] -->|Python Script| B[("PostgreSQL DB")]
+    B -->|Fetch Text| C["Topic Modeling (LDA)"]
     C -->|Update Labels| B
-    B -->|Labeled Data| D{Model Training}
-    D -->|TF-IDF + Random Forest| E[Priority Model]
-    D -->|Tokenizer + Neural Net| F[Department Model]
-    G[New Ticket] -->|Inference Engine| H[Final Report]
+    B -->|Labeled Data| D{"Model Training"}
+    D -->|"TF-IDF + Random Forest"| E["Priority Model"]
+    D -->|"Tokenizer + Neural Net"| F["Department Model"]
+    G["New Ticket"] -->|Inference Engine| H["Final Report"]
